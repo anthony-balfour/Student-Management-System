@@ -1,0 +1,17 @@
+.paper {
+  padding: 50px 20px;
+  width: 600px;
+  max-width: 70vw;
+  margin: 20px auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  margin-top: 2rem;
+}

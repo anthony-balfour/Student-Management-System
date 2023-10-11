@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, Container, Paper } from '@mui/material';
+import "./studentForm.css";
 
 export default function StudentForm() {
 
@@ -18,7 +19,6 @@ export default function StudentForm() {
   const handleSubmitClick = (event) => {
     event.preventDefault();
     const student = {name, address}
-    console.log(student);
     fetch(baseURL + "/add", {
       method: "POST",
       headers: {"Content-Type":"application/json"},
@@ -35,10 +35,11 @@ export default function StudentForm() {
       .then((result) => {
         setStudents(result);
       })
-  }, []);
+  }, [students]);
 
   return (
     <Box
+      className="flex"
       component="form"
       sx={{
         '& > :not(style)': { m: 1 },
@@ -49,7 +50,7 @@ export default function StudentForm() {
       {/* <TextField id="standard-basic" label="Standard" variant="standard" /> */}
       {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
       <Container>
-        <Paper elevation = {3} style={paperStyle}>
+        <Paper className="paper" elevation = {3}>
           <h1>Add Student</h1>
           <TextField id="filled-basic" label="Student Name" variant="filled" fullWidth
           value={name}
@@ -59,17 +60,18 @@ export default function StudentForm() {
           value={address}
           onChange={(event) => setAddress(event.target.value)}
           />
-          <Button variant="contained" color="primary" onClick={handleSubmitClick}>Submit</Button>
-
+          <div className='flex'>
+            <Button className="button" variant="contained" color="primary" onClick={handleSubmitClick}>Submit</Button>
+          </div>
         </Paper>
+        <Paper className="paper" elevation={3}>
         <h1>Students</h1>
-        <Paper elevation={3} style={paperStyle}>
           {students.map(student => {
             return (
             <Paper elevation={6} key={student.id} style={{margin:"10px", padding: "15px", textAlign: "left"}}>
-              <p>Id: {student.id}</p>
-              <p>Name: {student.name}</p>
-              <p>{student.address}</p>
+              <p><b>Id:</b> {student.id}</p>
+              <p><b>Name:</b> {student.name}</p>
+              <p><b>Address:</b> {student.address}</p>
             </Paper>
             )
           })}
