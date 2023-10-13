@@ -24,7 +24,9 @@ export default function StudentForm() {
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify(student)
     }).then(() => {
-      console.log("New Student Added")
+      // clearing text fields
+      setName("");
+      setAddress("");
     });
   }
 
