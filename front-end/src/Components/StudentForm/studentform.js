@@ -51,7 +51,7 @@ export default function StudentForm() {
     >
       {/* <TextField id="standard-basic" label="Standard" variant="standard" /> */}
       {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-      <Container>
+      <Container className="form-container">
         <Paper className="paper" elevation = {3}>
           <h1>Add Student</h1>
           <TextField id="filled-basic" label="Student Name" variant="filled" fullWidth
