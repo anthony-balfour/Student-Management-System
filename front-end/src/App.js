@@ -1,5 +1,6 @@
 import Appbar from './Components/AppBar/appbar';
 import StudentForm from './Components/StudentForm/studentform';
+import "./App.css";
 
 function App() {
   return (
