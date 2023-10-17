@@ -6,7 +6,7 @@ import "./studentForm.css";
 
 export default function StudentForm() {
 
-  const baseURL = "http://localhost:8080/student";
+  const baseURL = "http://3.14.251.109:8081/student";
 
   const paperStyle = {padding: '50px 20px', width: 600, margin: '20px auto'}
 
@@ -63,7 +63,7 @@ export default function StudentForm() {
           onChange={(event) => setAddress(event.target.value)}
           />
           <div className='flex'>
-            <Button className="button" variant="contained" color="primary" onClick={handleSubmitClick}>Submit</Button>
+            <Button id="button" variant="contained" color="primary" onClick={handleSubmitClick}>Submit</Button>
           </div>
         </Paper>
         <Paper className="paper" elevation={3}>
@@ -77,8 +77,6 @@ export default function StudentForm() {
             </Paper>
             )
           })}
-
-
         </Paper>
       </Container>
     </Box>

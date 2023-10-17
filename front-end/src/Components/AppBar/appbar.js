@@ -24,7 +24,7 @@ export default function Appar() {
             <MenuIcon />
           </IconButton>
           <Typography className="header" variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Spring Boot React Student Management System
+            Spring Boot React Student Management System (Anthony Balfour)
           </Typography>
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
